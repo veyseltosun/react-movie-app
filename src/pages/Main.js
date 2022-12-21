@@ -33,7 +33,7 @@ const Main = () => {
 
 
     <div>
-
+{/* 
       {movies?.map((movie) => {
         const { id, poster_path, title, vote_average, overview } = movie;
         return (
@@ -49,7 +49,7 @@ const Main = () => {
 
           </div>
         )
-      })}
+      })} */}
 
 
 
