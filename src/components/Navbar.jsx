@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
-import { useNavigate} from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import { signOut } from "../auth/firebase";
+// import React, { useContext } from "react";
+// import { useNavigate} from "react-router-dom";
+// import { AuthContext } from "../context/AuthContext";
+// import { signOut } from "../auth/firebase";
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const { currentUser } = useContext(AuthContext);
+  // const navigate = useNavigate();
+  // const { currentUser } = useContext(AuthContext);
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="/" style={{ color: "white" }}>
             React Movie App
@@ -46,7 +46,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-      </nav>
+      </nav> */}
     </div>
   );
 };
