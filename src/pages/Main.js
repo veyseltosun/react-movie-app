@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+// import axios from 'axios';
 
 
 const IMG_API = "https://image.tmdb.org/t/p/w1280";
 const Main = () => {
 
-  const [movies, setMovies] = useState("");
+  const [movies, setMovies] = useState(0);
 
-  const getMovies = () => {
+  // const getMovies =  () => {
     
-    axios.get("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1")
-    .then((response) => {
-      console.log(response.data.results);
-      setMovies(response.data.results)
-    })
-  }
-
-  // const getMovies = async () => {
-  //   await fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1")
-  //     .then((respond) => respond.json())
-  //     .then((data) => {
-  //       console.log(data.results);
-  //       setMovies(data.results)
-  //     })
+  //  axios.get("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa915d26c9bf8c48e9e32224094ff621&page=1")
+  //   .then((response) => {
+  //     console.log(response.data.results);
+  //     setMovies(response.data.results)
+  //   })
   // }
+
+  const getMovies = async () => {
+    await fetch("https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=aa915d26c9bf8c48e9e32224094ff621&page=1")
+      .then((respond) => respond.json())
+      .then((data) => {
+        console.log(data.results);
+        setMovies(data.results)
+      })
+  }
 
   useEffect(() => {
     getMovies()
@@ -53,7 +53,7 @@ const Main = () => {
 
 
 
-
+        <button onClick={() => getMovies()}> get movie</button>
     </div>
   )
 }
