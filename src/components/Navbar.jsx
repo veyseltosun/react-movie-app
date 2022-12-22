@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate} from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
-import { signOut } from "../auth/firebase";
+import { logOut } from "../auth/firebase";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Navbar = () => {
               <button
                 type="button"
                 className="ms-2 btn btn-outline-light"
-                onClick={() => signOut()}
+                onClick={() => logOut()}
               >
                 Logout
               </button>

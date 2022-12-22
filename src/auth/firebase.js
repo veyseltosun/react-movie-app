@@ -2,12 +2,16 @@
 import { initializeApp } from "firebase/app";
 import { 
     getAuth,
+    signOut,
+    onAuthStateChanged,
+   
     
     
    
   
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    
    
   } from 'firebase/auth';
 
@@ -44,23 +48,19 @@ const auth = getAuth(app)
 
   }
 
-  // Monitor auth state
-// const monitorAuthState = async () => {
-//     onAuthStateChanged(auth, user => {
-//       if (user) {
-//         console.log(user)
-//         showApp()
-//         showLoginState(user)
-  
-//         hideLoginError()
-//         hideLinkError()
-//       }
-//       else {
-//         showLoginForm()
-//         lblAuthState.innerHTML = `You're not logged in.`
-//       }
-//     })
-//   }
+//   Monitor auth state
+const monitorAuthState = async () => {
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        console.log(user)
+        
+      }
+      else {
+        console.log("You're not logged in.");
+     
+      }
+    })
+  }
   
 
 
@@ -82,7 +82,7 @@ export const signIn = async (email, password) => {
     }
   }
 
-  export const signOut = async () => {
+  export const logOut = async () => {
     await signOut(auth);
   }
 
@@ -111,6 +111,6 @@ export const signIn = async (email, password) => {
  
 //   connectAuthEmulator(auth, "http://localhost:9099");
 
-//   monitorAuthState();
+  monitorAuthState();
   
   export default app;
