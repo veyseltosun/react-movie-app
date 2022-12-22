@@ -27,7 +27,7 @@ const Login = () => {
         <h1 className="form-title display-3">Login</h1>
         <form id="login">
           <div className="mb-3">
-            <label for="email" className="form-label display-4">
+            <label htmlFor="email" className="form-label display-4">
               Email
             </label>
             <input
@@ -39,7 +39,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-            <label for="password" className="form-label display-4">
+            <label htmlFor="password" className="form-label display-4">
               Password
             </label>
             <input
@@ -49,7 +49,7 @@ const Login = () => {
               placeholder="Enter your password..."
               onChange={(e) => setPassword(e.target.value)}
             />
-            <div classNameName="link" onClick={() => forgotPassword(email)}>
+            <div className="link" onClick={() => forgotPassword(email)}>
               Forgot password?
             </div>
           </div>
